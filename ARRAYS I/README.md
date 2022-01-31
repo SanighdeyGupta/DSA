@@ -2,7 +2,7 @@
 
 An array is a collection of elements of the same type placed in contiguous memeory location.
 
-![loading...](images/array.jpg)
+![loading...](images/array.JPG)
 
 ```C++
 #include<iostream>
