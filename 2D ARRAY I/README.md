@@ -107,3 +107,55 @@ int main()
     return 0;
 }
 ```
+
+## SEARCHING IN A SORTED 2-D ARRAY
+
+![loading...](images/2darray4.JPG)
+
+There are multiple techniques to searck over a 2-d array like:-
+
+1) *Brute force method(Linear search)*: In this we iterate over entire array to search an element and its time complexity = O[n*m].
+2) *Binary search*: Its time complexity = O[n*logm].
+3) *Staircase search*: In this method we pickup a corner element and than iterate in a such a way that we reach our key element and as this path which we take form a stair pattern so it is called as **staircase** method, its time complexity = O[n+m].
+
+```C++
+#include<iostream>
+using namespace std;
+
+pair<int,int> staircase_search(int arr[][4],int n,int m,int key){
+    //if key is not present in the array
+    if(key < arr[0][0] || key > arr[n-1][m-1]){
+        return {-1,-1};
+    }
+    //stair_case method
+    int i = 0;
+    int j = m-1;
+    while(i<n && j>=0){
+        if(arr[i][j]==key){
+            return {i,j};
+        }
+        else if(arr[i][j]>key){
+            j--;
+        }
+        else{
+            i++;
+        }
+    }
+    return {-1,-1};
+}
+
+int main()
+{
+    int arr[][4] = {{10, 20, 30, 40},
+                    {15, 25, 35, 45},
+                    {27, 28, 37, 48},
+                    {32, 33, 35, 50}};
+    int n = 4, m = 4, key = 33;
+    pair<int,int> p = staircase_search(arr,n,m,key);
+    cout<<"("<<p.first<<","<<p.second<<")"<<endl;
+    return 0;
+}
+```
+
+## MANGO TREES
+
