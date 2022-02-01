@@ -105,7 +105,7 @@ int main()
 
 ## SHORTEST PATH
 
-![loading...](images/chararray1.jpg)
+![loading...](images/chararray1.JPG)
 
 ```C++
 #include<iostream>
