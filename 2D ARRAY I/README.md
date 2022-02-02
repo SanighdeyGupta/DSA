@@ -299,7 +299,8 @@ int MangoTree02(char arr[][100],int n){
 int main()
 { 
     char arr[100][100];
-    int n;cin >>n;
+    int n;
+    cin>>n;
     cin.get();
     for (int i = 0; i < n; i++)
     {
