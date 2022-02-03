@@ -123,3 +123,85 @@ int main()
     return 0;
 }
 ```
+
+## DYNAMIC MEMORY ALLOCATION
+
+### STATIC MEMORY
+
+It is a type of memory allocation in which all the data is stored in stack memory, which is created and destroyed by compiler itself.
+
+### DYNAMIC MEMORY
+
+It is a type of a runtime allocation in which all the data is created and stored in runtime, in a heap memory.
+
+> int *arr = new int[n];
+
+The pointer arr is stored in a stack as aststic allocation while new int[n] is stored in a heap dynamically the pointer will point toward the heap allocation, so after the programme is finished the stack gates deallocated i.e, pointer get deleted while the heap memory remain and don't get deleted until or unless a delete function is passed. 
+
+> arr[i] = *(arr+i)
+
+### MEMORY LEAK
+
+If we forget to use the delete keyword after the completion of the programme then the pointer address will get deleted so we don't have the address of the dynamic memory again hence that part of memory get's wasted.
+
+### USING NEW AND DELETE
+
+```C++
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    //dynamic array
+    int *arr = new int[n];
+    for(int i=0;i<n;i++){
+        arr[i] = i;
+        cout<<arr[i]<<" ";
+    }
+    //delete
+    delete [] arr;
+    cout<<arr<<endl;
+    return 0;
+}
+```
+
+## 2D DYNAMIC ARRAY
+
+```C++
+#include<iostream>
+using namespace std;
+
+int** create2darray(int rows, int cols){
+    int** arr = new int*[rows];
+    //allocate memory of each row
+    for(int i=0;i<rows;i++){
+        arr[i] = new int[cols];
+    }
+    //init the array
+    int value = 0;
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            arr[i][j] = value;
+            value++;
+        }
+    }
+    return arr;
+    delete [] arr;
+}
+
+int main()
+{
+    int rows, cols;
+    cin>>rows>>cols;
+    int** arr = create2darray(rows,cols);
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    delete [] arr;
+    return 0;
+}
+```
