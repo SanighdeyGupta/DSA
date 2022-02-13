@@ -324,3 +324,69 @@ int main()
     return 0;
 }
 ```
+
+## PROBLEM-1(ROTATING IMAGE)
+
+![loading...](images/vector1.JPG)
+
+![loading...](images/vector2.JPG)
+
+![loading...](images/vector3.JPG)
+
+```C++
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void transpose(vector<vector<int>>& matrix)
+{
+    for(int i=0; i<matrix.size(); i++)
+    {
+        for(int j=0;j<i;j++)
+        {
+            swap(matrix[i][j],matrix[j][i]);
+        }
+    }
+}
+ 
+void rotate(vector<vector<int>>& matrix) {
+      // your code goes here
+      transpose(matrix);
+      int row  = matrix.size();
+      int col = matrix[0].size();
+      for(int i=0,j=col-1; i<j; i++,j--)
+      {
+          int p=0;
+          for(;p<row;p++)
+          {
+              swap(matrix[p][i],matrix[p][j]);
+          }
+      }
+      
+}
+ 
+int main()
+{
+    vector<vector<int>> matrix ={
+        {1,2,3},
+        {4,5,6},
+        {7,8,9}
+    };
+    for(int i=0; i<matrix.size(); i++)
+    {
+        for(int number: matrix[i])
+        {
+            cout<<number<<" ";
+        }
+        cout<<endl;
+    }
+    rotate(matrix);
+    for(int i=0; i<matrix.size(); i++)
+    {
+        for(int number: matrix[i])
+        {
+            cout<<number<<" ";
+        }
+        cout<<endl;
+    }
+}
+```
