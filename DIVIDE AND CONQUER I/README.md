@@ -150,7 +150,11 @@ int main()
     vector<int> a{4,5,6,7,0,1,2,3};
     int key;
     cin>>key;
-    cout<<rotated_search(a,key)<<endl;
+    cout<<rotated_search(a,key)e<<endl;
     return 0;
 }
 ```
+
+## EXAMPLE-2(2D-Array mergsort)
+
+![loading...](images/div2.JPG)
