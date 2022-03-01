@@ -209,3 +209,7 @@ void operator=(product &x){
     }
     }
 ```
+
+## PROTECTED vs PRIVATE
+
+* The class member declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class. Private member are not inherited in class. Protected member are inherited in class.
