@@ -218,7 +218,7 @@ int main()
 
 ### PRINTING PAIRS
 
-Print_pairs time complexity = O[n].
+Print_pairs time complexity = O[n^2].
 
 ```C++
 #include<iostream>
