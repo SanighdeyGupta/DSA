@@ -1,4 +1,4 @@
-## HASHTABLE
+# HASHTABLE
 
 * It is a type of unordered data structure.
 1. Searching = O[1]
