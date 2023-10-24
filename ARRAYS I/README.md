@@ -328,6 +328,7 @@ int print_subarrays2(int arr[],int n){
 ### KADANE'S ALGORITHM
 
 Kadane sum method time complexity = O[n].
+If all elements are negative in the array then this algo doesn't work.
 
 ```C++
 int print_subarrays3(int arr[],int n){
