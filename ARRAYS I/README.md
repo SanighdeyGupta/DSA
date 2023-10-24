@@ -286,8 +286,7 @@ Brute force method time complexity = O[n^3].
 using namespace std;
 
 int print_subarrays(int arr[],int n){
-    int j = 0;
-    int largest_sum = 0;
+    int largest_sum = arr[0];
     for(int i=0;i<n;i++){
         for(int j=i;j<n;j++){
             int sum = 0;
